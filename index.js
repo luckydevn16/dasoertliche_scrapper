@@ -1,6 +1,7 @@
 import "dotenv/config"
 
 import scrap1 from "./src/scrap1.js"
+import scrap2 from "./src/scrap2.js"
 import initialize from "./src/initialize.js"
 import { markEnd, markStart } from "./src/util.js"
 
