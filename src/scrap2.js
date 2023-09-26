@@ -52,7 +52,7 @@ export default async function scrap2() {
 
         await insertDasoertliche({
           type: "Standardsuche",
-          keyword: "Sportärzte",
+          keyword: "Sport Orthopädie",
           page: pageNo,
 
           internal_link: header.internal_link,

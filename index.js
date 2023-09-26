@@ -20,9 +20,9 @@ if (stage === 1) {
   await scrap2()
   markEnd("Scrapping 2nd Site Ended")
 
-  markStart("Scrapping 3rd Site Started")
-  await scrap3()
-  markEnd("Scrapping 3rd Site Ended")
+  // markStart("Scrapping 3rd Site Started")
+  // await scrap3()
+  // markEnd("Scrapping 3rd Site Ended")
 }
 
 if (stage === 2) {
@@ -34,9 +34,9 @@ if (stage === 2) {
   await scrap2()
   markEnd("Scrapping 2nd Site Ended")
 
-  markStart("Scrapping 3rd Site Started")
-  await scrap3()
-  markEnd("Scrapping 3rd Site Ended")
+  // markStart("Scrapping 3rd Site Started")
+  // await scrap3()
+  // markEnd("Scrapping 3rd Site Ended")
 }
 
 if (stage === 3) {
@@ -44,13 +44,13 @@ if (stage === 3) {
   await scrap2()
   markEnd("Scrapping 2nd Site Ended")
 
-  markStart("Scrapping 3rd Site Started")
-  await scrap3()
-  markEnd("Scrapping 3rd Site Ended")
+  // markStart("Scrapping 3rd Site Started")
+  // await scrap3()
+  // markEnd("Scrapping 3rd Site Ended")
 }
 
-if (stage === 4) {
-  markStart("Scrapping 3rd Site Started")
-  await scrap3()
-  markEnd("Scrapping 3rd Site Ended")
-}
+// if (stage === 4) {
+//   markStart("Scrapping 3rd Site Started")
+//   await scrap3()
+//   markEnd("Scrapping 3rd Site Ended")
+// }
