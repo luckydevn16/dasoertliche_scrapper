@@ -1,44 +1,5 @@
 import colors from "colors"
 
-export const SNS_TYPE = {
-  Linkedin: "Linkedin",
-  Facebook: "Facebook",
-  Twitter: "Twitter",
-  Instagram: "Instagram",
-}
-
-export const CATEGORY_STATUS = {
-  None: 0,
-  Scrapped: 1,
-  Extracted: 2
-}
-
-export const BUSINESS_STATUS = {
-  None: 0,
-  Scrapped: 1,
-  Extracted: 2
-}
-
-export function link2type(link) {
-  if (link.indexOf("linkedin") !== -1) {
-    return SNS_TYPE.Linkedin
-  }
-
-  if (link.indexOf("facebook") !== -1) {
-    return SNS_TYPE.Facebook
-  }
-
-  if (link.indexOf("twitter") !== -1) {
-    return SNS_TYPE.Twitter
-  }
-
-  if (link.indexOf("instagram") !== -1) {
-    return SNS_TYPE.Instagram
-  }
-
-  return null
-}
-
 export function delay(time) {
   return new Promise((resolve) => setTimeout(resolve, time))
 }
