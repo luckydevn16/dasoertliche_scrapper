@@ -41,16 +41,22 @@ export default async function scrap1() {
 
         let address1 = ""
         let address2 = ""
+        let postal_code = ""
+        let memo = ""
+
         if (await item.$("div.splitter > div.left > address")) {
           const tempAddress = await item.$eval("div.splitter > div.left > address", (e) =>
             e.innerHTML.replace(/[\n\t]/g, "")?.trim()
           )
           const addressArr = tempAddress.split("<br>")
           address1 = addressArr?.[0]?.trim()
-          address2 = addressArr?.[1]?.trim()
+          memo = addressArr?.[1]?.trim()
+          postal_code = memo.substring(0, 5)
+          address2 = memo.substring(6, memo.length)
         }
 
         await insertDasoertliche({
+          site: "https://www.dasoertliche.de",
           type: "Standardsuche",
           keyword: "Sportärzte",
           page: pageNo,
@@ -60,6 +66,8 @@ export default async function scrap1() {
           category: category,
           address1: address1,
           address2: address2,
+          postal_code: postal_code,
+          memo: memo,
         })
       }
 
@@ -68,7 +76,7 @@ export default async function scrap1() {
       try {
         const btnNext = await page.waitForSelector("div.paging > span > a[title='zur nächsten Seite']")
         await btnNext.click()
-        pageNo ++
+        pageNo++
         markBody2(`Loading Next Page : ${pageNo}`)
       } catch (e) {
         hasNext = false

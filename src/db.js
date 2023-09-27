@@ -19,6 +19,7 @@ export default async function initializeDB() {
     `CREATE TABLE dasoertliche (
       id INTEGER PRIMARY KEY AUTOINCREMENT, 
       
+      site TEXT,
       type TEXT,
       keyword TEXT,
       page INTEGER,
@@ -27,7 +28,9 @@ export default async function initializeDB() {
       title TEXT,
       category TEXT,
       address1 TEXT,
-      address2 TEXT
+      address2 TEXT,
+      postal_code TEXT,
+      memo TEXT
     )`
   )
 
@@ -43,6 +46,7 @@ export async function insertDasoertliche(data) {
 
   const result = await db.run(`INSERT INTO dasoertliche 
     (
+      site,
       type,
       keyword,
       page,
@@ -51,10 +55,13 @@ export async function insertDasoertliche(data) {
       title,
       category,
       address1,
-      address2
+      address2,
+      postal_code,
+      memo
     )
     VALUES 
     (
+      :site,
       :type,
       :keyword,
       :page,
@@ -63,8 +70,11 @@ export async function insertDasoertliche(data) {
       :title,
       :category,
       :address1,
-      :address2
+      :address2,
+      :postal_code,
+      :memo
     )`, {
+    ":site": data.site,
     ":type": data.type,
     ":keyword": data.keyword,
     ":page": data.page,
@@ -73,7 +83,9 @@ export async function insertDasoertliche(data) {
     ":title": data.title,
     ":category": data.category,
     ":address1": data.address1,
-    ":address2": data.address2
+    ":address2": data.address2,
+    ":postal_code": data.postal_code,
+    ":memo": data.memo
   })
 
   await db.close()

@@ -3,11 +3,13 @@
         "AUTOINCREMENT",
         "dasoertliche",
         "findbutton",
+        "hitlistitem",
         "hitwrap",
         "nächsten",
         "networkidle",
         "Seite",
         "Sportärzte",
-        "Standardsuche"
+        "Standardsuche",
+        "vcard"
     ]
 }
